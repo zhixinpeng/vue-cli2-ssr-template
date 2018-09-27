@@ -202,7 +202,7 @@ function generateLoaders (loader, loaderOptions) {
 此时再次运行`npm run dev`与`npm run build`，项目就能成功运行了
 
 ## SSR的webpack配置修改
-Vue的SSR渲染需要增加以下依赖`vue-server-renderer`、`webpack-node-externals`、`vuex-router-sync`、`express`、`html-minifier`、`cross-env`，同时删除`html-webpack-plugin`
+Vue的SSR渲染需要增加以下依赖`vue-server-renderer`、`webpack-node-externals`、`vuex-router-sync`、`express`、`html-minifier`、`cross-env`
 
 ### 修改`vue-loader.conf.js`
 将extract的值设置为false，因为服务端渲染会自动将CSS内置，如果使用该extract，则会引入link标签载入CSS，从而导致相同的CSS资源重复加载
@@ -676,12 +676,16 @@ app.listen(4000, ()=>{
 ```
 
 ## 测试
+本地开发
+```
+npm run dev
+```
 构建打包
 ```
 npm run build
 ```
 
-运行
+服务端运行
 ```
 npm run server
 ```
